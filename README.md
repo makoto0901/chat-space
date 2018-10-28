@@ -40,8 +40,8 @@ Things you may want to cover:
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|INT|null:false, foreign_key: true|
-|group_id|INT|null:false, foreign_key: true|
+|user_id|REFERENCES|null:false, foreign_key: true|
+|group_id|REFERENCES|null:false, foreign_key: true|
 
 ### Association
 - belongs_to :user
