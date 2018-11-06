@@ -1,0 +1,46 @@
+.chat--side {
+  // padding計算を楽にするために指定
+  box-sizing: border-box;
+  color: $white;
+  float: left;
+  width: 300px;
+  .header {
+    background-color: $side_header_color;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    &__user-name {
+      display: inline-block;
+      font-size: $side_header_font;
+      font-weight: bold;
+    }
+    &__user-info {
+      float: right;
+      .list {
+        display: inline-block;
+      }
+      .icon {
+        color: $white;
+        font-size: $side_header_font;
+      }
+    }
+  }
+
+  .groups {
+    background-color: $side_group_color;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        font-size: $side_group_name_font;
+      }
+      &__message {
+        font-size: $side_group_message_font;
+        // タイトルとメッセージの間に5pxを指定
+        margin-top: 5px;
+      }
+    }
+  }
+}
