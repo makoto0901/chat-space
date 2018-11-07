@@ -1,0 +1,62 @@
+= render "side_bar"
+
+.chat--contents
+  .header
+    .left-header
+      .left-header__title
+        sampleグループ
+      %ul.left-header__members
+        Member：
+        %li.member
+          taro
+        %li.member
+          jiro
+        %li.member
+          saburo
+    .right-header
+      .right-header__button
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+          ryosukemaehara
+        .upper-message__date
+          2016/10/02 06:27:07
+      .lower-meesage
+        .lower-message__content
+          なるほど
+    .message
+      .upper-message
+        .upper-message__user-name
+          ryosukemaehara
+        .upper-message__date
+          2016/10/02 06:27:14
+      .lower-meesage
+        .lower-message__content
+          水魚きもい
+    .message
+      .upper-message
+        .upper-message__user-name
+          ryosukemaehara
+        .upper-message__date
+          2016/10/02 06:27:25
+      .lower-meesage
+        .lower-message__content
+          command Enterで送信したい感がある
+    .message
+      .upper-message
+        .upper-message__user-name
+          ryosukemaehara
+        .upper-message__date
+          2016/10/02 06:27:30
+      .lower-meesage
+        .lower-message__content
+          お腹すいた
+  .form
+    %form
+      %input.form__message{placeholder: "type a message"}
+      .form__file
+        %label.form__file__image
+          = fa_icon 'picture-o', class: 'icon'
+      %input.form__send{type: 'submit', value: 'Send'}
