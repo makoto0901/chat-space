@@ -34,9 +34,11 @@
       box-sizing: border-box;
       padding: 20px 0 40px;
       &__name {
+        color: $white;
         font-size: $side_group_name_font;
       }
       &__message {
+        color: $white;
         font-size: $side_group_message_font;
         // タイトルとメッセージの間に5pxを指定
         margin-top: 5px;
