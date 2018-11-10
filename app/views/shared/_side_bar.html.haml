@@ -13,17 +13,9 @@
           = fa_icon 'cog', class: 'icon'
   .groups
     .group
-      .group__name
-        神
-      .group__message
-        sdkField
-    .group
-      .group__name
-        aaaaaaaaaa
-      .group__message
-        まだメッセージはありません。
-    .group
-      .group__name
-        sampleグループ
-      .group__message
-        まだメッセージはありません。
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
