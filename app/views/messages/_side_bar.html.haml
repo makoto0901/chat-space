@@ -1,14 +1,14 @@
 .chat--side
   .header
     .header__user-name
-      ryosukemaehira
+      = current_user.name
     %ul.header__user-info
       %li.list
         = link_to '#' do
           // font-awesomeのhelperメドッドを呼び出して鉛筆マーク作成
           = fa_icon 'pencil-square-o', class: 'icon'
       %li.list
-        = link_to '#' do
+        = link_to edit_user_path(current_user) do
           // font-awesomeのhelperメドッドを呼び出して歯車マーク作成
           = fa_icon 'cog', class: 'icon'
   .groups
