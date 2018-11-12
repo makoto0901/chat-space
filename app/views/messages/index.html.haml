@@ -52,10 +52,19 @@
       .lower-meesage
         .lower-message__content
           お腹すいた
+  / .form
+  /   %form
+  /     %input.form__message{placeholder: "type a message"}
+  /     .form__file
+  /       %label.form__file__image
+  /         = fa_icon 'picture-o', class: 'icon'
+  /     %input.form__send{type: 'submit', value: 'Send'}
+
   .form
-    %form
-      %input.form__message{placeholder: "type a message"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__file
-        %label.form__file__image
+        = f.label :image, class: 'form__file__image' do
           = fa_icon 'picture-o', class: 'icon'
-      %input.form__send{type: 'submit', value: 'Send'}
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__send'
