@@ -16,42 +16,7 @@
     .right-header
       = link_to 'Edit', 'edit', class: 'right-header__button'
   .messages
-    .message
-      .upper-message
-        .upper-message__user-name
-          ryosukemaehara
-        .upper-message__date
-          2016/10/02 06:27:07
-      .lower-meesage
-        .lower-message__content
-          なるほど
-    .message
-      .upper-message
-        .upper-message__user-name
-          ryosukemaehara
-        .upper-message__date
-          2016/10/02 06:27:14
-      .lower-meesage
-        .lower-message__content
-          水魚きもい
-    .message
-      .upper-message
-        .upper-message__user-name
-          ryosukemaehara
-        .upper-message__date
-          2016/10/02 06:27:25
-      .lower-meesage
-        .lower-message__content
-          command Enterで送信したい感がある
-    .message
-      .upper-message
-        .upper-message__user-name
-          ryosukemaehara
-        .upper-message__date
-          2016/10/02 06:27:30
-      .lower-meesage
-        .lower-message__content
-          お腹すいた
+    = render @messages
   / .form
   /   %form
   /     %input.form__message{placeholder: "type a message"}
