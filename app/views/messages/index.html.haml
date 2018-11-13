@@ -17,14 +17,6 @@
       = link_to 'Edit', 'edit', class: 'right-header__button'
   .messages
     = render @messages
-  / .form
-  /   %form
-  /     %input.form__message{placeholder: "type a message"}
-  /     .form__file
-  /       %label.form__file__image
-  /         = fa_icon 'picture-o', class: 'icon'
-  /     %input.form__send{type: 'submit', value: 'Send'}
-
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
