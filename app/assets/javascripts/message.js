@@ -43,7 +43,7 @@ $(function() {
       alert('メッセージを入力してください');
     })
     .always(function(){
-      $('.form__submit').prop('disabled',false)
+      $('.form__send').prop('disabled',false)
     })
   })
 });
