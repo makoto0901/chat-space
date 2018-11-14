@@ -42,6 +42,7 @@
     box-sizing: border-box;
     padding: 46px 40px 0;
     overflow: scroll;
+    height: 750px;
     .message {
       .upper-message {
         padding-bottom: 10px;
@@ -65,8 +66,8 @@
           margin-bottom: 40px;
         }
         &__image {
-          max-width: 300px;
-          max-height:300px;
+          max-width: 100px;
+          max-height: 100px;
         }
       }
     }
@@ -77,6 +78,11 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: 300px;
     &__message {
       border: none;
       float: left;
