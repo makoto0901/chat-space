@@ -64,6 +64,10 @@
           font-size: 14px;
           margin-bottom: 40px;
         }
+        &__image {
+          max-width: 300px;
+          max-height:300px;
+        }
       }
     }
   }
