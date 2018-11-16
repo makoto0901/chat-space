@@ -1,4 +1,3 @@
-
 $(function() {
   // 失敗時に更新処理をやめるよう値を保持
   var interval = setInterval(messeageUpdate, 5000);
@@ -33,14 +32,15 @@ $(function() {
         data: {id: messageId}
       })
       .done(function(data){
-        var id = $('.message').data('messageId');
-        var insertHTML = "";
+        let id = $('.message').data('messageId');
+        let insertHTML = "";
         data.forEach(function(message){
           insertHTML += buildHTML(message);
         });
-        $('.messages').append(insertHTML);
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        scroll();
+        if (insertHTML !== "") {
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        }
       })
       .fail(function() {
         alert("自動更新に失敗しました");
