@@ -50,7 +50,6 @@ $(function(){
       let user_name = $(this).attr('data-user-name');
       appendAddUser(user_id,user_name);
       $(this).parent().remove();
-      $('#user-search-field').val('');
     });
     $(document).on('click', '.js-remove-btn', function(){
       $(this).parent().remove();
