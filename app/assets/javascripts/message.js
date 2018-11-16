@@ -3,8 +3,8 @@ $(function() {
   var interval = setInterval(messeageUpdate, 5000);
   function buildHTML(message){
     let imageUrl = (message.image) ?`<img class="lower-message__image" src="${message.image}">` : "";
-    let html = `<div class="message">
-                  <div class="upper-message" message-id="${message.id}">
+    let html = `<div class="message" message-id="${message.id}">
+                  <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.name}
                     </div>
