@@ -45,13 +45,13 @@ $(function(){
         }
       });
     });
-    $(document).on('click','.chat-group-user__btn--add',function(){
+    $("#user-search-result").on('click','.chat-group-user__btn--add',function(){
       let user_id = $(this).attr('data-user-id');
       let user_name = $(this).attr('data-user-name');
       appendAddUser(user_id,user_name);
       $(this).parent().remove();
     });
-    $(document).on('click', '.js-remove-btn', function(){
+    $("#chat-group-users").on('click', '.js-remove-btn', function(){
       $(this).parent().remove();
     });
 });
