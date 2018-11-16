@@ -1,7 +1,9 @@
 $(function() {
+  // 失敗時に更新処理をやめるよう値を保持
+  var interval = setInterval(messeageUpdate, 5000);
   function buildHTML(message){
     let imageUrl = (message.image) ?`<img class="lower-message__image" src="${message.image}">` : "";
-    let html = `<div class="message">
+    let html = `<div class="message" message-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.name}
@@ -18,6 +20,33 @@ $(function() {
                     ${imageUrl}
                 </div>`
     return html;
+  }
+
+  function messeageUpdate(){
+    if (location.href.match(/\/groups\/\d+\/messages/)) {
+      let messageId = $(".message").last().attr('message-id');
+      $.ajax({
+        url: location.href,
+        type:'GET',
+        dataType: 'json',
+        data: {id: messageId}
+      })
+      .done(function(data){
+        let id = $('.message').data('messageId');
+        let insertHTML = "";
+        data.forEach(function(message){
+          insertHTML += buildHTML(message);
+        });
+        if (insertHTML !== "") {
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        }
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました");
+        clearInterval(interval);
+      })
+    }
   }
 
   $('#new_message').on('submit', function(e){
